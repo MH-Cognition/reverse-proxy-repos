@@ -133,6 +133,23 @@ services:
       - zookeeper
     volumes:
       - ~/.aws:/root/.aws:ro
+  
+  media:
+    image: media-service:latest
+    environment:
+      AWS_PROFILE: cognito-role
+      AWS_REGION: ap-south-1
+    container_name: media
+    expose:
+      - "8080"
+    env_file:
+      - ../lms-mhc.media-management/lms-mhc-media-management/.env
+    depends_on:
+      - postgres
+      - kafka
+      - zookeeper
+    volumes:
+      - ~/.aws:/root/.aws:ro
 
 volumes:
   pg_data:
