@@ -75,6 +75,7 @@ services:
     image: identity-service:latest
     environment:
       AWS_PROFILE: cognito-role
+      PERMISSION_CACHE_DEBUG: 1
     container_name: identity
     expose:
       - "8080"
