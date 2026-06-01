@@ -106,7 +106,7 @@ services:
   notification:
     image: notification-service:latest
     environment:
-      AWS_PROFILE: ses-readonly
+      AWS_PROFILE: ses-notification
     container_name: notification
     expose:
       - "8080"
