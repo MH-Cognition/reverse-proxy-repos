@@ -1,0 +1,25 @@
+[req]
+default_bits       = 2048
+distinguished_name = req_distinguished_name
+x509_extensions    = v3_req
+prompt             = no
+
+[req_distinguished_name]
+C  = US
+ST = Local
+L  = Local
+O  = LMS
+CN = 192.168.0.4
+
+[v3_req]
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = localhost
+IP.1 = 192.168.0.4
+IP.2 = 192.168.2.148
+IP.3 = 192.168.2.248
+IP.4 = 127.0.0.1
